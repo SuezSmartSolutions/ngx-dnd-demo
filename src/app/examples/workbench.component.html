@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-light mb-3">
+                <div class="card-header">The example</div>
+                <div class="card-body text-dark">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-light mb-3">
+                <div class="card-header">The source code</div>
+                <div class="card-body text-dark">
+                    <pre prism [code]="tsCode"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
