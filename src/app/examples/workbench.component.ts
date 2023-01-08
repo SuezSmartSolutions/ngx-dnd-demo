@@ -2,6 +2,7 @@ import { HttpClient, HttpEventType, HttpRequest } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
     templateUrl: './workbench.component.html'
@@ -22,7 +23,7 @@ export class WorkBenchComponent implements OnDestroy {
                 const folder = path.substring(0, idx);
                 const file = path.substring(idx + 1);
                 if (folder && file) {
-                    const req = new HttpRequest('GET', `/app/examples/${folder}/${file}.component.ts`, null, { responseType: 'text' });
+                    const req = new HttpRequest('GET', `${environment.virtualFolder}/app/examples/${folder}/${file}.component.ts`, null, { responseType: 'text' });
                     this.client.request(req).subscribe(res => {
                         if (res.type === HttpEventType.Response) {
                             this.tsCode = `${res.body}`;

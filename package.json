@@ -3,7 +3,7 @@
   "description": "Angular X Drag-and-Drop demo",
   "version": "13.0.0",
   "scripts": {
-    "build": "ng build --configuration production",
+    "build": "ng build --configuration production --base-href \"https://suezsmartsolutions.github.io/ngx-dnd-demo/\"",
     "start": "ng serve"
   },
   "repository": {
